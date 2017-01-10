@@ -1,7 +1,7 @@
 ---
-title: How to create an SAP HANA Developer Edition in the Cloud
-description: This tutorial will help you create a HANA instance in one of the two public cloud providers:  Amazon AWS or Microsoft Azure.
-tags: [ products>sap-hana, products>sap-hana-cloud-platform, tutorial>beginner ]
+title: How to setup SAP HANA, Express Edition using the Cloud Appliance Library (CAL)
+description: This tutorial will help you create an instance of SAP HANA, Express Edition in one of the two public cloud providers:  Amazon AWS or Microsoft Azure.
+tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 ---
 
 ## Prerequisites  
