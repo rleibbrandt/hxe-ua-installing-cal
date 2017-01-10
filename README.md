@@ -150,6 +150,7 @@ To connect to Amazon AWS, you **must** use the key-pair that was provided by Ama
 For more detailed instructions, check out the [Amazon AWS guide to Connect Your Amazon EC2 Instance](http://docs.aws.amazon.com/gettingstarted/latest/computebasics-linux/getting-started-deploy-app-connect.html).
 
 **Connecting to AWS from Mac or Unix**
+
 From Linux or Mac OS-X, in terminal window, run this command: `ssh -i [hanakey].pem [IP Address] -l root` (Replace `[hanakey].pem` with the name of your key-pair file, and [IP Address] with the IP address of your instance.) You can then connect to your new instance as you would when connecting to AWS from Windows in Step 8 above.
 
 For more detailed instructions, check out the [Amazon AWS guide to Connect Your Amazon EC2 Instance](http://docs.aws.amazon.com/gettingstarted/latest/computebasics-linux/getting-started-deploy-app-connect.html).
