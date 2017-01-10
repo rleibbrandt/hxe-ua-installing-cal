@@ -173,13 +173,13 @@ This section takes about **10 minutes** to complete, and about **10 to 25 minute
 
 3. On the left, click on ***SOLUTIONS*** to see the systems available for use. Search for **express** in the search box to find  SAP HANA, Express Edition.
 
-    ![Solution Selection](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/1.png)
+    ![Solution Selection](https://github.com/AnnieSuantak/hxe-ua-installing-cal/blob/master/1.png)
 
 4. Once you've found the instance through the search, you need to "activate" it. Activating an instance connects it to your account on Microsoft Azure or Amazon AWS. After the solution is activated, the link next to it should change to **Create Instance**.
 
 5. Finally, click the "Create Instance" link on this solution to start the setup wizard. The wizard  will take you through a few simple steps and then you will have your instance up and running. These steps are outlined below.
 
-    ![Simple Mode](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/2.png)
+    ![Simple Mode](https://github.com/AnnieSuantak/hxe-ua-installing-cal/blob/master/2.png)
 
 6. Choose your account, select your region, enter a name for your instance and password for your instance. This is the "simple" setup and only requires those couple of items to generate your instance.  
 
@@ -187,28 +187,28 @@ This section takes about **10 minutes** to complete, and about **10 to 25 minute
 
 8. From the advanced mode the first step is to select your account.  
 	
-	![Account Selection](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/3.png)
+	![Account Selection](https://github.com/AnnieSuantak/hxe-ua-installing-cal/blob/master/3.png)
 
 9. Next you will need to give details for this instance such as name and description as well as the network, subnet and whether you want the instance to have a static IP address.
 
 	The network and subnet sections can use the default settings.  When you are ready, click **Step 3** to continue.
 
-    ![Instance Details](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/4.png)
+    ![Instance Details](https://github.com/AnnieSuantak/hxe-ua-installing-cal/blob/master/4.png)
 
 10. Choose the virtual machine size you want to use. Larger virtual machines can handle more data, and process faster, but cost more money. (The cost per hour on the screen is updated based on your selection.)
 
-    ![Instance Size](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/5.png)
+    ![Instance Size](https://github.com/AnnieSuantak/hxe-ua-installing-cal/blob/master/5.png)
 
 11. The next part of this section refers to the port addresses that are opened for the server, these are the standard ones that need to be opened for use of the majority of the server, later on you can reduce these to fit your specific needs.
 
-	![Instance Ports](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/6.png)
+	![Instance Ports](https://github.com/AnnieSuantak/hxe-ua-installing-cal/blob/master/6.png)
 
 12. Enter a password for your system.
 
     >The password rules can be confusing.  Choose a password between 8-9 characters, with at least one upper-case letter, one lower-case letter, and one number.
     >If your password does not follow the rules, a warning will appear on the screen.
 
-    ![Password Rules](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/7.png)
+    ![Password Rules](https://github.com/AnnieSuantak/hxe-ua-installing-cal/blob/master/7.png)
 
 13. Configure the schedule for the virtual machine. This option allows you to define a specific date when the machine will shut down, or a schedule when it should be running.  The virtual machine will suspend on the date you set.  
 
@@ -216,11 +216,11 @@ This section takes about **10 minutes** to complete, and about **10 to 25 minute
 
     Click **Next** when you have set a run schedule, or a suspend date.
 
-    ![Scheduling](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/8.png)
+    ![Scheduling](https://github.com/AnnieSuantak/hxe-ua-installing-cal/blob/master/8.png)
 
 14. This screen shows all of your choices for review. To fix any problems, just click **Edit** that particular section. When you are done, click **Create**. The VM creation process will start.
 
-    ![Review](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/9.png)
+    ![Review](https://github.com/AnnieSuantak/hxe-ua-installing-cal/blob/master/9.png)
 
 15. After the process of creating the VM starts, you will be prompted to download your "Key Pair".  This file will allow you to access your system using [SSH](http://en.wikipedia.org/wiki/Secure_Shell).
 
@@ -247,11 +247,43 @@ To connect to Amazon AWS, you **must** use the key-pair that was provided by Ama
 
 **Connecting to AWS from Windows**
 
-1. Using the key-pair file (`*.pem`) downloaded from Amazon, create a private key file for putty using the PuTTY executable.  
+1. Open up the key-pair file (`*.pem`) that you downloaded previously copy the contents of the file to a new text file and save it. The file extension of this new file does not matter. Just save it to your local system.
 
-2. Open PuTTY on your computer, and enter the IP Address for your instance in the Host Name (or IP address) field. Click the **Open** button.
+    ![Review](https://github.com/AnnieSuantak/hxe-ua-installing-cal/blob/master/12.png)
 
-3. When the connection is opened, enter `root` as the user. You can now change the default password for the `hdbadm` OS user with the command `passwd hdbadm`. Your new password must be entered twice, and it will be checked to ensure it is sufficiently secure. Once you have entered an appropriate password twice, then you are finished!
+2. Google `PuTTY` and download both `putty.exe` and `puttygen.exe`
+
+    ![Review](https://github.com/AnnieSuantak/hxe-ua-installing-cal/blob/master/13.png)
+
+3. Open `PuTTYgen` and select **Load**.
+
+    ![Review](https://github.com/AnnieSuantak/hxe-ua-installing-cal/blob/master/14.png)
+
+    By default, only `.ppk` files will be selected. Change this to **All Files** and select the blank file you just saved which had the contents of the `.pem` file. After loading this, you will get the following message.
+
+    ![Review](https://github.com/AnnieSuantak/hxe-ua-installing-cal/blob/master/15.png)
+
+4. Next, click on **Save Private Key** and say **Yes** to the alert. Save this to your system as a `.ppk` file. You can now close `PuTTYgen`
+
+    ![Review](https://github.com/AnnieSuantak/hxe-ua-installing-cal/blob/master/16.png)
+
+5. Open `PuTTY`. Expand `SSH` and select `Auth` and then go to **Browse** and select the `.ppk` file you just saved.
+
+    ![Review](https://github.com/AnnieSuantak/hxe-ua-installing-cal/blob/master/17.png)
+
+6. Under **Connection**, select **Data** and enter **root** as the Auto-login username.
+
+    ![Review](https://github.com/AnnieSuantak/hxe-ua-installing-cal/blob/master/18.png)
+
+7. Select **Session** and enter the IP address of your instance and hit **Open**
+
+    ![Review](https://github.com/AnnieSuantak/hxe-ua-installing-cal/blob/master/19.png)
+    
+    You should get the following output.
+
+    ![Review](https://github.com/AnnieSuantak/hxe-ua-installing-cal/blob/master/20.png)
+
+8. You can now connect to your new HANA instance using HANA Studio. Please refer to the tutorial [How to download and install the HANA Eclipse plugin](http://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html). You can log in to HANA using the IP address, the username `SYSTEM`, and the password you specified in the setup process.
 
 For more detailed instructions, check out the [Amazon AWS guide to Connect Your Amazon EC2 Instance](http://docs.aws.amazon.com/gettingstarted/latest/computebasics-linux/getting-started-deploy-app-connect.html).
 
