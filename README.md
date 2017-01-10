@@ -96,13 +96,6 @@ This section takes about **10 minutes** to complete, and about **10 to 25 minute
 
     It will take about 10-25 minutes for your VM to start.  You can see your instance status by clicking on the **INSTANCE** tab of the Cloud Appliance Library main screen.
 
-16. There are two ways to connect to your new HANA instance:
-
-    - **Using a browser**.  Open your browser, and add the IP address of your instance to address bar.  Use the format:  `http://XXX.XXX.XXX.XXX`.  The web server (XSC) on the HANA instance has a getting started page with information, links to tools, and content. This also includes the links needed for accessing the XSA based tools.
-    - **Using the HANA Studio**.  Install the [HANA Studio](https://tools.hana.ondemand.com/#hanatools) (which required Eclipse) on your local system.  Then, you can log in to HANA using the IP address, the username `SYSTEM`, and the password you specified in the setup process.
-
-    ![Instanced](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/11.png)
-
 ### Optional - Use SSH to log in to the Linux OS
 Connecting to the underlying Linux OS in the cloud instances is different for each provider.  Follow the instructions for the cloud provider you have chosen to host HANA.
 
@@ -147,12 +140,17 @@ To connect to Amazon AWS, you **must** use the key-pair that was provided by Ama
 
     ![Review](https://github.com/AnnieSuantak/hxe-ua-installing-cal/blob/master/20.png)
 
-8. You can now connect to your new HANA instance using HANA Studio. Please refer to the tutorial [How to download and install the HANA Eclipse plugin](http://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html). You can log in to HANA using the IP address, the username `SYSTEM`, and the password you specified in the setup process.
+8. There are two ways to connect to your new HANA instance:
+
+    - **Using a browser**.  Open your browser, and add the IP address of your instance to address bar.  Use the format:  `http://XXX.XXX.XXX.XXX`.  The web server (XSC) on the HANA instance has a getting started page with information, links to tools, and content. This also includes the links needed for accessing the XSA based tools.
+    - **Using the HANA Studio**.  Install the [HANA Studio](https://tools.hana.ondemand.com/#hanatools) (which required Eclipse) on your local system.  Please refer to the tutorial [How to download and install the HANA Eclipse plugin](http://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html). You can log in to HANA using the IP address, the username SYSTEM, and the password you specified in the setup process.
+
+    ![Instanced](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/11.png)
 
 For more detailed instructions, check out the [Amazon AWS guide to Connect Your Amazon EC2 Instance](http://docs.aws.amazon.com/gettingstarted/latest/computebasics-linux/getting-started-deploy-app-connect.html).
 
 **Connecting to AWS from Mac or Unix**
-From Linux or Mac OS-X, in terminal window, run this command: `ssh -i [hanakey].pem [IP Address] -l root` (Replace `[hanakey].pem` with the name of your key-pair file, and [IP Address] with the IP address of your instance.)
+From Linux or Mac OS-X, in terminal window, run this command: `ssh -i [hanakey].pem [IP Address] -l root` (Replace `[hanakey].pem` with the name of your key-pair file, and [IP Address] with the IP address of your instance.) You can then connect to your new instance as you would when connecting to AWS from Windows in Step 8 above.
 
 For more detailed instructions, check out the [Amazon AWS guide to Connect Your Amazon EC2 Instance](http://docs.aws.amazon.com/gettingstarted/latest/computebasics-linux/getting-started-deploy-app-connect.html).
 
